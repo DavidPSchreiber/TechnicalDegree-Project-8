@@ -4,7 +4,7 @@ const employees = [];
 const url = "https://randomuser.me/api/?results=12&nat=us,au,ca,ch,de,gb,fr&inc=name, picture, email, location, phone, dob, nat & noinfo";
 const modalContainer = document.querySelector('.modal-container');
 const index = 0;
-const toggle = document.getElementById('toggle');
+const toggle = document.querySelector('toggle');
 const searchField = document.getElementById("search");
 
 function generateData() {
@@ -137,11 +137,11 @@ function changeCase(str) {
     return str;
   }
   
-  searchField.addEventListener("keyup", (e) => search()); //Attach the search function to the searchField to be called when the user starts typing
+  searchField.addEventListener("keyup", (e) => search()); 
 
-  // function to switch on/off dark mode
+// dark mode toggle
 
-  function updateTheme() {
+ function updateTheme() {
     if (toggle.checked) {
       localStorage.setItem('Dark-Theme', 'on');
       document.documentElement.setAttribute('data-theme', 'dark');
@@ -151,10 +151,13 @@ function changeCase(str) {
     }
   }
   
-  // event listener for dark mode toggle
+  // event listener for dark theme toggle
+
   toggle.addEventListener('click', updateTheme);
-    
-  // check mode value in local storage
+  
+  
+  // check value for theme in local storage
+
   function localStorageCheck() {
     if (localStorage.length > 0) {
       let storageThemeValue = localStorage.getItem('Dark-Theme');
@@ -167,4 +170,3 @@ function changeCase(str) {
       }
     }
   }
-
