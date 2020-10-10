@@ -4,7 +4,7 @@ const employees = [];
 const url = "https://randomuser.me/api/?results=12&nat=us,au,ca,ch,de,gb,fr&inc=name, picture, email, location, phone, dob, nat & noinfo";
 const modalContainer = document.querySelector('.modal-container');
 const index = 0;
-const toggle = document.querySelector('toggle');
+const toggle = document.querySelector('#toggle');
 const searchField = document.getElementById("search");
 
 function generateData() {
@@ -141,19 +141,16 @@ function changeCase(str) {
 
 // dark mode toggle
 
- function updateTheme() {
-    if (toggle.checked) {
-      localStorage.setItem('Dark-Theme', 'on');
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('Dark-Theme', 'off');
-    }
+const btn = document.querySelector(".btn-toggle");
+const theme = document.querySelector("#theme-link");
+btn.addEventListener("click", function() {
+  // Swap out the URL for the different stylesheets
+  if (theme.getAttribute("href") == "light-theme.css") {
+    theme.href = "dark-theme.css";
+  } else {
+    theme.href = "light-theme.css";
   }
-  
-  // event listener for dark theme toggle
-
-  toggle.addEventListener('click', updateTheme);
+});
   
   
   // check value for theme in local storage
