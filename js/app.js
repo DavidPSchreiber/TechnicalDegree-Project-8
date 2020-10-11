@@ -141,16 +141,26 @@ function changeCase(str) {
 
 // dark mode toggle
 
-const btn = document.querySelector(".btn-toggle");
-const theme = document.querySelector("#theme-link");
-btn.addEventListener("click", function() {
-  // Swap out the URL for the different stylesheets
-  if (theme.getAttribute("href") == "light-theme.css") {
-    theme.href = "dark-theme.css";
-  } else {
-    theme.href = "light-theme.css";
-  }
-});
+
+// below is from dark mode 
+
+document.querySelector('#toggle').addEventListener
+('change', () => {
+    document.body.classList.toggle('dark')
+})
+// end sun-moon
+
+
+// const btn = document.querySelector(".btn-toggle");
+// const theme = document.querySelector("#theme-link");
+// btn.addEventListener('change', function() {
+//   // Swap out the URL for the different stylesheets
+//   if (theme.getAttribute("href") == "light-theme.css") {
+//     theme.href = "dark-theme.css";
+//   } else {
+//     theme.href = "light-theme.css";
+//   }
+// });
   
   
   // check value for theme in local storage
