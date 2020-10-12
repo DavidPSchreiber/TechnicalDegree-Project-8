@@ -12,20 +12,20 @@ function generateData() {
     .then(response => response.json()) // parse the data into json() name:value pairs.
     .then(data => { //Anonymous function, do something...
      const results = data.results; //store data in "const results"
-     directory(results); // call the directory function, create cards for each employee passed through 
-    employees.push(results); //store the employees returned rom the API in a global variable so we can access them later
+     directory(results); // call the directory function, create card for each employee passed through 
+    employees.push(results); //store the employees returned from the API in a global variable 
     })
-    .catch(error => console.log("Oops! Something went wrong.", error)); //If something goes wrong, catch the error and log the message
+    .catch(error => console.log("Something went wrong!", error)); // catch the error and log to console
  
  }
    generateData();
 
-   const directory = employees => { //Anonymous function to handle newly created DOM elements for employees (parameter) in the array.
+   const directory = employees => { //Anonymous function to handle newly created DOM elements for employee array
     const gallery = document.querySelector('#gallery'); // store the elements
   
     employees.forEach(employee => { //loop through each employee in array
-      gallery.innerHTML += //Target the gallery DIV so we can inject code inside of it.
-       // Use a template literal to build the structure of HTML elements.
+      gallery.innerHTML += //Target the gallery DIV to add code inside
+       // Use template literal to build the structure of HTML elements.
        `
       <div class="card">
         <div class="card-img-container">
@@ -48,7 +48,7 @@ function generateData() {
   
   };
 
-//Translate into English Alhabet 
+// Translate into English alphabet 
 
 function changeCase(str) {
     str = str.replace("ß", "ss");
@@ -90,22 +90,22 @@ function changeCase(str) {
     modalContainer.style.display = 'block';
 
     modalContainer.addEventListener("click", (e) => { //When the user clicks on certain things in the pop-up modal...
-      if(e.target.className === "close") { //If they click on the "x"...
+      if(e.target.className === "close") { //If they click on the "X"...
         modalContainer.style.display = "none"; //Remove the modal display
-        } else if (e.target.className === "previous") { //If they click on the previous arrow
-          if (index > 0) { //If they click on anything besides the first one...
+        } else if (e.target.className === "previous") { //If user clicks on the previous arrow
+          if (index > 0) { //If user clicks on anything 
             modal(employees, employees[index - 1], index - 1); //move back one card
           } else {
-            modal(employees, employees[employees.length - 1], employees.length - 1); //If they click on the first one, move to the length(12) minus 1 which would display the 11th card.
+            modal(employees, employees[employees.length - 1], employees.length - 1); //If user clicks on the first one, move to the length(12) minus 1 which would display the 11th card.
           }
-        } else if (e.target.className === "next") { //If they click on the next arrow
-          if (index < employees.length - 1) { //if what they clicked on is not the last card
-            modal(employees, employees[index + 1], index + 1); //move forward one card.
+        } else if (e.target.className === "next") { //If user click on the next arrow
+          if (index < employees.length - 1) { //if what user clicked on is not the last card
+            modal(employees, employees[index + 1], index + 1); //move forward one card
           } else {
-            modal(employees, employees[0], 0); //If they did click on the last card, move back to the first card (index of 0)
+            modal(employees, employees[0], 0); //If user clicks on last card, move back to the first card (index 0)
           }
         } else {
-          return; // end the function, return the value it's landed on.
+          return; // end the function, return value it's landed on.
         }
     });
   };
@@ -115,18 +115,18 @@ function changeCase(str) {
     let employeeCard = document.querySelectorAll(".card");
     let employeeName = document.querySelectorAll(".card-info-container");
     for (let i = 0; i < employeeCard.length; i++) { //Loop through each card thumbnail
-      let title = employeeName[i].getElementsByTagName("h3")[0]; //Obtain the value found within each card's h3 element, starting at the first one [0 index]
+      let title = employeeName[i].getElementsByTagName("h3")[0]; //get the value found within each card's h3 element, starting at the first one [0 index]
       let name = title.textContent; //Get the person's name from each card, store it in "name"
       name = removeAccent(name);
       if (name.toLowerCase().indexOf(searchValue) > -1) { //If that person's name matches what the user is searching at all, so it returns an index of at least 0 (greater than -1)
         employeeCard[i].style.display = ""; //Take that person and keep them on the screen
       } else {
-        employeeCard[i].style.display = "none"; //Or else hide them because they don't match the search
+        employeeCard[i].style.display = "none"; // else hide them because they don't match the search
       }
     }
   }
 
-  // Return the data in the English Alphabet only
+  // Return the data in English alphabet only
 
   function removeAccent(str) {
     str = str.replace("ß", "ss");
@@ -139,7 +139,7 @@ function changeCase(str) {
   
   searchField.addEventListener("keyup", (e) => search()); 
 
-// dark mode toggle
+
 
 
 // below is from dark mode 
@@ -148,20 +148,7 @@ document.querySelector('#toggle').addEventListener
 ('change', () => {
     document.body.classList.toggle('dark')
 })
-// end sun-moon
 
-
-// const btn = document.querySelector(".btn-toggle");
-// const theme = document.querySelector("#theme-link");
-// btn.addEventListener('change', function() {
-//   // Swap out the URL for the different stylesheets
-//   if (theme.getAttribute("href") == "light-theme.css") {
-//     theme.href = "dark-theme.css";
-//   } else {
-//     theme.href = "light-theme.css";
-//   }
-// });
-  
   
   // check value for theme in local storage
 

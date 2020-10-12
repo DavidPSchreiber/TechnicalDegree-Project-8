@@ -18,7 +18,7 @@ body.dark {
   color: #97a4b1;
   background-color: black;
   border-color: #cfd7e7;
-  card-font-color: rgba(191, 116, 50, 0.8);
+  card-font-color: rgba(185, 116, 50, 0.8);
   searchtext: white;
 }
 
@@ -145,8 +145,8 @@ margin-right: 12px;
   margin-top: 20px;
   margin-left: 5px;
 }
-.dark#searchtext {
-  color: white;
+.dark .searchtext {
+  color: #97a4b1;
 }
 
 input:focus, #search:focus {
