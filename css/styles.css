@@ -3,11 +3,11 @@
 }
 
 body {
-  font-size: 1em;
+  font-size: .93em;
   font-family: 'Mukta', Helvetica, Arial, sans-serif;
   color: black;
   font-weight: 300;
-  background-color: #cce6ff;
+  background-color: #cee5fa;
   padding: 0.3em;
   max-width: 1400px;
   margin: auto;
@@ -78,8 +78,8 @@ margin-right: 12px;
 .switch::after {
   content: '';
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, .2);
   background-color: white;
@@ -173,11 +173,11 @@ input:focus, #search:focus {
 }
 
 .card {
-  border-radius: 6px;
+  border-radius: 5px;
   background-color: rgba(40,40,40,0.4);
-  padding: .5em;
+  padding: 0.5em;
   display: flex;
-  width: 85%;
+  width: 90%;
   margin: auto;
   border: 2px solid black;
   box-shadow: 5px 10px 10px #5a87b5;
@@ -198,7 +198,7 @@ input:focus, #search:focus {
 
 img {
   border-radius: 50%;
-  width: 5em;
+  width: 4em;
   height: auto;
   margin-top: 15px;
 }
@@ -207,18 +207,18 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 0.5em;
+  padding: 0 0.3em;
   max-width: 100%;
 }
 
 .card-info-container p {
-  margin: 0.4em;
+  margin: 0.3em;
   margin-left: 0;
   color: white;
 }
 
 .card-info-container h2 {
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: 500;
   color: black;
   margin: 0.25em 0;
