@@ -1,2 +1,2 @@
-# TechnicalDegree-Project-8
-Using an API to create Employee Directory
+Employee Directory:
+Employs a third-party API and Fetch requests to allow users to find information on fellow employees.
